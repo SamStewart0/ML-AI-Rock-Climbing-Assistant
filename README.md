@@ -4,7 +4,9 @@ AI-powered beta generator for rock climbers. Uses YOLO26 and LLM reasoning to ma
 ---
 
 > [!WARNING]
-> **UNDER CONSTRUCTION:** This project is currently in active development. This README is a plan for version 1.0. 
+> **UNDER CONSTRUCTION:** This project is currently in active development. This README is a plan for version 1.0.
+
+---
 
 ### What I'm working on right now:  
 * **Dataset Expansion:** Gathering 500 high-quality images of climbing walls to improve model accuracy.
