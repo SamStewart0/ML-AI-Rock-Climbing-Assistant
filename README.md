@@ -4,8 +4,11 @@ AI-powered beta generator for rock climbers. Uses YOLO26 and LLM reasoning to ma
 ---
 
 > [!WARNING]
-> **UNDER CONSTRUCTION:** This project is currently in active development. Features, API endpoints, and documentation are subject to change without notice.
+> **UNDER CONSTRUCTION:** This project is currently in active development. This README is a plan for version 1.0. 
 
+### What I'm working on right now:  
+* **Dataset Expansion:** Gathering 500 high-quality images of climbing walls to improve model accuracy.
+  
 ---
 
 # UNNAMED
@@ -18,7 +21,7 @@ This system allows users to photograph a climbing wall, select specific holds vi
 ### 1. Mobile Client (Swift)
 * **Capture:** High-resolution photo capture, automatically resized to 1280x1280 to match the YOLO26-X input requirements.
 * **Interactive Layer:** A human-in-the-loop UI where users tap the holds they intend to use. 
-* **Normalization:** Screen-space taps are converted to normalized coordinates (0.0 to 1.0) before being sent to the server to ensure consistency across different device aspect ratios.
+* **Normalization:** Screen taps are converted to normalized coordinates (0.0 to 1.0) before being sent to the server to ensure consistency across different device aspect ratios.
 
 ### 2. API Layer (FastAPI)
 * **Endpoint:** `POST /analyze-route`
