@@ -1,2 +1,53 @@
 # ML-AI-Rock-Climbing-Assistant
 AI-powered beta generator for rock climbers. Uses YOLO26 and LLM reasoning to map routes and suggest movement sequences from a single photo.
+
+---
+
+> [!WARNING]
+> **UNDER CONSTRUCTION:** This project is currently in active development. Features, API endpoints, and documentation are subject to change without notice.
+
+---
+
+# UNNAMED
+**A local-cloud hybrid system for rock climbing route analysis and beta generation.**
+
+This system allows users to photograph a climbing wall, select specific holds via a tap-to-select interface, and receive a generated movement sequence (beta) based on the geometry and orientation of the holds.
+
+## Architecture Overview
+
+### 1. Mobile Client (Swift)
+* **Capture:** High-resolution photo capture, automatically resized to 1280x1280 to match the YOLO26-X input requirements.
+* **Interactive Layer:** A human-in-the-loop UI where users tap the holds they intend to use. 
+* **Normalization:** Screen-space taps are converted to normalized coordinates (0.0 to 1.0) before being sent to the server to ensure consistency across different device aspect ratios.
+
+### 2. API Layer (FastAPI)
+* **Endpoint:** `POST /analyze-route`
+* **Payload:** Multipart form data containing the .jpg image and a JSON array of user-tapped coordinates.
+* **Orchestration:** Manages the hand-off between the local CV model and the remote LLM API.
+
+### 3. Detection Engine (YOLO26-X)
+* **Local Inference:** Runs on the host PC's CPU. 
+* **Hardware Optimization:** Uses OpenVINO to accelerate inference on AMD hardware.
+* **Spatial Logic:** The engine identifies bounding boxes for all holds. A Point-in-Box algorithm matches user taps to specific detected holds, filtering out the noise of other routes on the wall.
+
+### 4. Reasoning Brain (LLM)
+* **Prompting:** Sends the processed image and the filtered hold coordinates to the LLM.
+* **Context:** The model analyzes the hold types (crimps, jugs, slopers) and their relative distances to generate an ergonomically sound climbing sequence.
+
+### 5. Output and Visualization
+* **Data Contract:** The server returns a JSON payload containing a step-by-step text sequence and pixel-coordinate markers for the app to render.
+* **Rendering:** Swift renders a visual overlay (numbered path) directly onto the user's original photo.
+
+---
+
+## Technical Stack
+
+| Component | Technology |
+| :--- | :--- |
+| **Mobile** | Swift (UIKit/SwiftUI) |
+| **Backend** | Python, FastAPI |
+| **CV Model** | YOLO26-X (OpenVINO IR Format) |
+| **LLM API** | UNSPECIFIED |
+| **Tunneling** | ngrok |
+
+---
