@@ -9,8 +9,13 @@ AI-powered beta generator for rock climbers. Uses YOLO26 and LLM reasoning to ma
 ---
 
 ### What I'm working on right now:  
-* **Dataset Expansion:** Gathering 500 high-quality images of climbing walls to improve model accuracy.
+* **Dataset Expansion:** Using RedditAPI to gather 500 high-quality images of climbing walls to improve model accuracy.
   
+### Why am I doing this:
+* To gain experience integrating Computer Vision (YOLO) and LLMs.  
+* To gain experience with Mobile Development in Swift.
+* To consolidate experience using APIs to send and recieve data.
+* 
 ---
 
 # UNNAMED
@@ -31,7 +36,7 @@ This system allows users to photograph a climbing wall, select specific holds vi
 * **Orchestration:** Manages the hand-off between the local CV model and the remote LLM API.
 
 ### 3. Detection Engine (YOLO26-X)
-* **Local Inference:** Runs on the host PC's CPU. 
+
 * **Hardware Optimization:** Uses OpenVINO to accelerate inference on AMD hardware.
 * **Spatial Logic:** The engine identifies bounding boxes for all holds. A Point-in-Box algorithm matches user taps to specific detected holds, filtering out the noise of other routes on the wall.
 
