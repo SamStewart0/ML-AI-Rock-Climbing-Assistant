@@ -10,12 +10,14 @@ AI-powered beta generator for rock climbers. Uses YOLO26 and LLM reasoning to ma
 
 ### What I'm working on right now:  
 * **Dataset Expansion:** Using RedditAPI to gather 500 high-quality images of climbing walls to improve model accuracy.
+
+---
   
 ### Why am I doing this:
 * To gain experience integrating Computer Vision (YOLO) and LLMs.  
 * To gain experience with Mobile Development in Swift.
 * To consolidate experience using APIs to send and recieve data.
-* 
+  
 ---
 
 # UNNAMED
