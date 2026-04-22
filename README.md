@@ -9,7 +9,7 @@ AI-powered beta generator for rock climbers. Uses YOLO26 and LLM reasoning to ma
 ---
 
 ### What I'm working on right now:  
-* **Dataset Expansion:** Using RedditAPI to gather 500 high-quality images of climbing walls to improve model accuracy.
+* Using RedditAPI to gather 500 diverse images of climbing walls to improve model accuracy.
 
 ---
   
