@@ -1,0 +1,13 @@
+train: /content/train/images
+val: /content/valid/images
+test: /content/test/images
+
+nc: 6
+names: ['Downclimb', 'Hold', 'Macro', 'Unknown', 'Volume', 'start_tag']
+
+roboflow:
+  workspace: sams-workspace-23ppo
+  project: my-first-project-pwb2d
+  version: 2
+  license: CC BY 4.0
+  url: https://universe.roboflow.com/sams-workspace-23ppo/my-first-project-pwb2d/dataset/2
