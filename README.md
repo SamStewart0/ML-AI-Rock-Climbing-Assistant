@@ -9,7 +9,7 @@ AI-powered beta generator for rock climbers. Uses YOLO26 and LLM reasoning to ma
 ---
 
 ### What I'm working on right now:  
-* Using RedditAPI to gather 500 diverse images of climbing walls to improve model accuracy.
+* Currently scaling the dataset from an initial "Gold Standard" of 330 augmented images to a target of 800+ via model-assisted auto-labeling.
 
 ---
   
@@ -37,10 +37,10 @@ This system allows users to photograph a climbing wall, select specific holds vi
 * **Payload:** Multipart form data containing the .jpg image and a JSON array of user-tapped coordinates.
 * **Orchestration:** Manages the hand-off between the local CV model and the remote LLM API.
 
-### 3. Detection Engine (YOLO26-X)
+### 3. Detection Engine (YOLO26-seg)
 
-* **Hardware Optimization:** Uses OpenVINO to accelerate inference on AMD hardware.
-* **Spatial Logic:** The engine identifies bounding boxes for all holds. A Point-in-Box algorithm matches user taps to specific detected holds, filtering out the noise of other routes on the wall.
+* **Segmentation:** Reaplaces bounding boxes with polygons for pixel-perfect accuracy.
+* **Filtering:** Uses a Point-in-Polygon algorithm to match user taps to specific detected instances, filtering out "noise" (holds from adjacent routes).
 
 ### 4. Reasoning Brain (LLM)
 * **Prompting:** Sends the processed image and the filtered hold coordinates to the LLM.
@@ -58,7 +58,7 @@ This system allows users to photograph a climbing wall, select specific holds vi
 | :--- | :--- |
 | **Mobile** | Swift (UIKit/SwiftUI) |
 | **Backend** | Python, FastAPI |
-| **CV Model** | YOLO26-X (OpenVINO IR Format) |
+| **CV Model** | YOLO26-seg |
 | **LLM API** | UNSPECIFIED |
 | **Tunneling** | ngrok |
 
