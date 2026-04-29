@@ -28,7 +28,7 @@ This system allows users to photograph a climbing wall, select specific holds vi
 ## Architecture Overview
 
 ### 1. Mobile Client (Swift)
-* **Capture:** High-resolution photo capture, automatically resized to 1280x1280 to match the YOLO26-X input requirements.
+* **Capture:** High-resolution photo capture, automatically resized to 640x640 to match the YOLO26-seg input requirements.
 * **Interactive Layer:** A human-in-the-loop UI where users tap the holds they intend to use. 
 * **Normalization:** Screen taps are converted to normalized coordinates (0.0 to 1.0) before being sent to the server to ensure consistency across different device aspect ratios.
 
